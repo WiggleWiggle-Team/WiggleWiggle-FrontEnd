@@ -1,0 +1,51 @@
+on:
+  pull_request:
+    branches:
+      - "main"
+      - "develop"
+jobs:
+  WiggleWiggle-Frontend-CI:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test
+
+      - name: Success notification to discord
+        uses: sarisia/actions-status-discord@v1
+        if: ${{ success() }}
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "✅  WiggleWiggle-Frontend-CI 성공했당!  ✅"
+          description: "햅--삐 ㅋㅋ"
+          content: "<@${{ secrets.FRONT_ROLE_ID }}> PR 확인해주세요!"
+          url: "https://github.com/WiggleWiggle-Team/WiggleWiggle-FrontEnd"
+          color: "00FF00"
+          username: WiggleWiggle-Frontend CI 봇
+          avatar_url: ${{ secrets.AVATAR_URL }}
+          image: ${{ secrets.SUCCESS_IMAGE_URL }}
+
+      - name: Failure notification to discord
+        uses: sarisia/actions-status-discord@v1
+        if: ${{ failure() }}
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "❗️  WiggleWiggle-Frontend-CI 실패했어용..  ❗️"
+          description: "불--편"
+          url: "https://github.com/WiggleWiggle-Team/WiggleWiggle-FrontEnd"
+          color: "E74C3C"
+          username: WiggleWiggle-Frontend CI 봇
+          avatar_url: ${{ secrets.AVATAR_URL }}
+          image: ${{ secrets.FAILURE_IMAGE_URL }}
