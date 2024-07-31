@@ -29,7 +29,7 @@ jobs:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           title: "✅  WiggleWiggle-Frontend-CI 성공했당!  ✅"
           description: "햅--삐 ㅋㅋ"
-          content: "<@${{ secrets.FRONT_ROLE_ID }}> PR 확인해주세요!"
+          content: "<@${{ secrets.DISCORD_USER_ID_1 }}> <@${{ secrets.DISCORD_USER_ID_2 }}> <@${{ secrets.DISCORD_USER_3 }}> PR 확인해주세요!"
           url: "https://github.com/WiggleWiggle-Team/WiggleWiggle-FrontEnd"
           color: "00FF00"
           username: WiggleWiggle-Frontend CI 봇
