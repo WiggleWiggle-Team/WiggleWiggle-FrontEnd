@@ -1,0 +1,1 @@
+export const theme = {} as const // 디자인 시스템을 정의하는 객체

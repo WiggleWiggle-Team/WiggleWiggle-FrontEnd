@@ -1,0 +1,62 @@
+[
+  {
+    "name": "⚙ Setting",
+    "color": "e3dede",
+    "description": "개발 환경 세팅"
+  },
+  {
+    "name": "✨ Feature",
+    "color": "a2eeef",
+    "description": "기능 개발"
+  },
+  {
+    "name": "⚡ Optimization",
+    "color": "ff9800",
+    "description": "최적화 관련"
+  },
+  {
+    "name": "🌏 Deploy",
+    "color": "003366",
+    "description": "배포 관련"
+  },
+  {
+    "name": "🔧 Performance",
+    "color": "ffcc00",
+    "description": "코드 성능 개선"
+  },
+  {
+    "name": "🎨 Publishing",
+    "color": "ff66b2",
+    "description": "디자인 퍼블리싱"
+  },
+  {
+    "name": "🐞 Bug",
+    "color": "d73a4a",
+    "description": "버그 발견 및 수정"
+  },
+  {
+    "name": "📃 Docs",
+    "color": "1d76DB",
+    "description": "문서 작성 및 수정 (README.md 등)"
+  },
+  {
+    "name": "📬 API",
+    "color": "d4c5f9",
+    "description": "서버 API 통신"
+  },
+  {
+    "name": "♻️ Refactor",
+    "color": "66cc66",
+    "description": "코드 리팩토링"
+  },
+  {
+    "name": "🫧 Simple",
+    "color": "ffccdd",
+    "description": "간단한 변경사항"
+  },
+  {
+    "name": "✅ Test",
+    "color": "ccffc4",
+    "description": "test 관련(storybook, jest...)"
+  }
+]
